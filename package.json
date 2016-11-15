@@ -1,0 +1,32 @@
+{
+  "name": "string-class",
+  "version": "1.0.0",
+  "description": "extension of javascript string class",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover _mocha -- -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-oagunbiade/string-class.git"
+  },
+  "keywords": [
+    "string",
+    "class",
+    "javascript"
+  ],
+  "author": "oreoluwa agunbiade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela-oagunbiade/string-class/issues"
+  },
+  "homepage": "https://github.com/andela-oagunbiade/string-class#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.10.1",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.2"
+  }
+}
