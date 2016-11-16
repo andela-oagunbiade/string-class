@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": "eslint-config-airbnb-base",
+  "extends": "airbnb-base",
   "env": {
     "node": true,
     "es6": true,
