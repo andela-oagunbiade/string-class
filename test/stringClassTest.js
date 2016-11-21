@@ -34,8 +34,11 @@ describe('String Class', () => {
   });
 
   describe('Method isQuestion', () => {
-    it('should return if the string is a question', () => {
+    it('should return "true" if the entire string is a question', () => {
       expect('How are you?'.isQuestion()).to.be.true;
+    });
+    it('should return "false" if the entire string is not a question', () => {
+      expect('How? are you'.isQuestion()).to.be.false;
     });
   });
 
