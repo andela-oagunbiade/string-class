@@ -7,7 +7,10 @@ describe('String Class', () => {
     it('should return "true" if word has vowels', () => {
       expect('andela'.hasVowels()).to.be.true;
     });
-    it('should not return true if word has only consonants', () => {
+    it('should also return "true" regardless of the vowel case', () => {
+      expect('clAss'.hasVowels()).to.be.true;
+    });
+    it('should return "false" if word has only consonants', () => {
       expect('hymn'.hasVowels()).to.be.false;
     });
   });
@@ -19,7 +22,7 @@ describe('String Class', () => {
   });
 
   describe('Method toLower', () => {
-    it('should return words in lower case', () => {
+    it('should return the string in lower case', () => {
       expect('AnDeLA'.toLower()).to.equal('andela');
     });
   });
