@@ -40,6 +40,22 @@ const StringManipulation = {
    */
   isQuestion() {
     return /\?$/.test(this);
+  },
+
+  /**
+   *Creates a list of words from the string
+   @return{Array} - a list of the words
+   */
+  words() {
+    return this.replace(/[^\w\s]/g, '').split(/[\s]/);
+  },
+
+  /**
+   * Checks for the number of words in a string
+   * @return{Number} - returns the total number of words in the string
+   */
+  wordCount() {
+    return this.words().length;
   }
 };
 

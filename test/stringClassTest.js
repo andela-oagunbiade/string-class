@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 require('../src/stringClass');
 
 // Take a closer look at the "it" statements
-describe('String Class', () => {
+describe('StringManipulation Class', () => {
   describe('Method hasVowels', () => {
     it('should return "true" if word has vowels', () => {
       expect('andela'.hasVowels()).to.be.true;
@@ -43,8 +43,8 @@ describe('String Class', () => {
   });
 
   describe('Method words', () => {
-    it('should rerurn a list of words', () => {
-      expect('Andela is fun'.words()).to.equal(['andela', 'is', 'fun']);
+    it('should return a list of words', () => {
+      expect('Andela is fun'.words()).to.deep.equal(['Andela', 'is', 'fun']);
     });
   });
   // Ensure ths method uses words method above
