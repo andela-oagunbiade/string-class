@@ -18,6 +18,7 @@ describe('StringManipulation Class', () => {
   describe('Method toUpper', () => {
     it('should return the string in uppercase', () => {
       expect('amity'.toUpper()).to.equal('AMITY');
+      expect('AnDelA'.toUpper()).to.equal('ANDELA');
     });
   });
 
@@ -47,22 +48,33 @@ describe('StringManipulation Class', () => {
       expect('Andela is fun'.words()).to.deep.equal(['Andela', 'is', 'fun']);
     });
   });
-  // Ensure ths method uses words method above
+
   describe('Method wordCount', () => {
     it('should return the correct number of words', () => {
       expect('Andela is fun'.wordCount()).to.equal(3);
     });
   });
 
+  describe('Method reverseWord', () => {
+    it('should return the reverse of a word', () => {
+      expect('maps'.reverseWord()).to.equal('spam');
+    });
+    it('should return same string for a word palindrome', () => {
+      expect('kayak'.reverseWord()).to.equal('kayak');
+    });
+  });
+
   describe('Method toCurrency', () => {
     it('should return a currency representation of a number', () => {
+      expect('5000'.toCurrency()).to.equal('5,000.00');
       expect('10000.00'.toCurrency()).to.equal('10,000.00');
+      expect('123456.789'.toCurrency()).to.equal('123,456.78');
     });
   });
 
   describe('Method fromCurrency', () => {
     it('should return a number representation of the curency', () => {
-      expect('10,000.00'.fromCurrency()).to.equal('10000.00');
+      expect('123,456,789.00'.fromCurrency()).to.equal('123456789.00');
     });
   });
 
@@ -73,7 +85,8 @@ describe('StringManipulation Class', () => {
   });
 
   describe('Method alternatingCase', () => {
-    it('should return an alternating case for each letter in a string starting with lower case', () => {
+    it(`should return an alternating case for each letter in a string
+    starting with lower case`, () => {
       expect('Checkpoint'.alternatingCase()).to.equal('cHeCkPoInT');
     });
   });

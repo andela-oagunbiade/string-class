@@ -1,14 +1,14 @@
 const StringManipulation = {
   /**
    * Tests if a string contains vowels
-   * @return{Boolean} - returns true or false depending on the match
+   * @return {Boolean} True or false depending on the match
    */
   hasVowels() {
     return /[aeiou]/i.test(this);
   },
   /**
    * Converts a string to uppercase characters
-   * @return{String} - string in uppercase
+   * @return {String} Word in uppercase
    */
   toUpper() {
     return this.replace(/[a-z]/g, character =>
@@ -18,7 +18,7 @@ const StringManipulation = {
 
   /**
    * Converts a string to lowercase characters
-   * @return{String} - string in lowercase
+   * @return {String} Word in lowercase
    */
   toLower() {
     return this.replace(/[A-Z]/g, character =>
@@ -28,7 +28,7 @@ const StringManipulation = {
 
   /**
    * Converts the first letter of a string to uppercase
-   * @return{String} - string with capitalized first letter
+   * @return {String} Word with capitalized first letter
    */
   ucFirst() {
     return this.replace(this[0], this[0].toUpper());
@@ -36,7 +36,7 @@ const StringManipulation = {
 
   /**
    * Tests if a string is a question
-   * @return{Boolean} - returns true or false depending on the match
+   * @return {Boolean} True or false depending on the match
    */
   isQuestion() {
     return /\?$/.test(this);
@@ -44,7 +44,7 @@ const StringManipulation = {
 
   /**
    *Creates a list of words from the string
-   @return{Array} - a list of the words
+   @return {Array} A list of the words
    */
   words() {
     return this.replace(/[^\w\s]/g, '').split(/[\s]/);
@@ -52,11 +52,35 @@ const StringManipulation = {
 
   /**
    * Checks for the number of words in a string
-   * @return{Number} - returns the total number of words in the string
+   * @return {Number} The total number of words in the string
    */
   wordCount() {
     return this.words().length;
+  },
+
+  /**
+   * Perfoms a reverse on a string
+   * @return {String} The reverse of a string
+   */
+  reverseWord() {
+    return this.replace(/./g, (letter, index) =>
+      this[this.length - (index + 1)]);
+  },
+
+  /**
+   * Performs a currency representation of a string
+   * @return {String} Represented as a currency
+   */
+  toCurrency() {
+    const currencyParts = this.split(/\./);
+    currencyParts[1] = currencyParts[1] || '00';
+    currencyParts[0] = currencyParts[0].reverseWord()
+    .replace(/.{3}/g, number => `${number},`)
+    .replace(/,$/, '')
+    .reverseWord();
+    return `${currencyParts[0]}.${currencyParts[1].substr(0, 2)}`;
   }
+
 };
 
 Object.assign(String.prototype, StringManipulation);
