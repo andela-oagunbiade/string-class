@@ -15,14 +15,14 @@
     "comma-dangle": 0,
     "arrow-body-style": 0,
     // "curly": ["error", "multi"],
-    "no-shadow": ["error", { "allow": ["req", "res", "err"] }],
-    "valid-jsdoc": ["error", {
+    "no-shadow": [2, { "allow": ["req", "res", "err"] }],
+    "valid-jsdoc": [2, {
       "requireReturn": true,
       "requireReturnType": true,
       "requireParamDescription": false,
       "requireReturnDescription": true
     }],
-    "require-jsdoc": ["error", {
+    "require-jsdoc": [2, {
         "require": {
             "FunctionDeclaration": true,
             "MethodDefinition": true,
