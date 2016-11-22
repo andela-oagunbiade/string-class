@@ -118,6 +118,43 @@ const StringManipulation = {
     const middlePosition = this.length / 2;
     return (middlePosition === parseInt(middlePosition, 10)) ?
       this.substr(middlePosition - 1, 2) : this.charAt(middlePosition);
+  },
+
+  /**
+   * Converts numbers into words
+   * @return {String} Representation of numbers in words
+   */
+  numberWords() {
+    const mapNumberWords = {
+      0: 'zero',
+      1: 'one',
+      2: 'two',
+      3: 'three',
+      4: 'four',
+      5: 'five',
+      6: 'six',
+      7: 'seven',
+      8: 'eight',
+      9: 'nine'
+    };
+
+    return this.replace(/\d/g, number => `${mapNumberWords[number]} `).trim();
+  },
+
+  /**
+   * Tests if string is single digit
+   * @return {Boolean} True or False depending on the match
+   */
+  isDigit() {
+    return /^\d{1}$/.test(this);
+  },
+
+  /**
+   * Tests if a string contains double characters
+   * @return {Boolean} True or False depending on the match
+   */
+  doubleCheck() {
+    return /(.)\1{1}/.test(this);
   }
 
 };
