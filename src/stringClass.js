@@ -6,6 +6,7 @@ const StringManipulation = {
   hasVowels() {
     return /[aeiou]/i.test(this);
   },
+
   /**
    * Converts a string to uppercase characters
    * @return {String} Word in uppercase
@@ -75,11 +76,12 @@ const StringManipulation = {
     const currencyParts = this.split(/\./);
     currencyParts[1] = currencyParts[1] || '00';
     currencyParts[0] = currencyParts[0].reverseWord()
-    .replace(/.{3}/g, number => `${number},`)
-    .replace(/,$/, '')
-    .reverseWord();
+      .replace(/.{3}/g, number => `${number},`)
+      .replace(/,$/, '')
+      .reverseWord();
     return `${currencyParts[0]}.${currencyParts[1].substr(0, 2)}`;
   },
+
   /**
    * Performs a number representation of a currency
    * @return {String} Represented as a number
@@ -96,6 +98,26 @@ const StringManipulation = {
     return this.replace(/\w/g, (letter) => {
       return /[a-z]/.test(letter) ? letter.toUpper() : letter.toLower();
     });
+  },
+
+  /**
+   * Alternates the case of a string
+   * @return {String} Alternated case string
+   */
+  alternatingCase() {
+    return this.replace(/\w/g, (character, i) => {
+      return (i + 1) % 2 === 0 ? character.toUpper() : character.toLower();
+    });
+  },
+
+  /**
+   * Identifies the middle character(s)
+   * @return {string} The character located in the middle of the string
+   */
+  getMiddle() {
+    const middlePosition = this.length / 2;
+    return (middlePosition === parseInt(middlePosition, 10)) ?
+      this.substr(middlePosition - 1, 2) : this.charAt(middlePosition);
   }
 
 };
