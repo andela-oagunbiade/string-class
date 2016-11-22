@@ -79,6 +79,23 @@ const StringManipulation = {
     .replace(/,$/, '')
     .reverseWord();
     return `${currencyParts[0]}.${currencyParts[1].substr(0, 2)}`;
+  },
+  /**
+   * Performs a number representation of a currency
+   * @return {String} Represented as a number
+   */
+  fromCurrency() {
+    return this.replace(/,/g, '');
+  },
+
+  /**
+   * Inverts the case of a string
+   * @return {String} Inverted case string
+   */
+  inverseCase() {
+    return this.replace(/\w/g, (letter) => {
+      return /[a-z]/.test(letter) ? letter.toUpper() : letter.toLower();
+    });
   }
 
 };
