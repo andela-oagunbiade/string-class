@@ -23,6 +23,7 @@
   "homepage": "https://github.com/andela-oagunbiade/string-class#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "codeclimate-test-reporter": "^0.4.0",
     "coveralls": "^2.11.15",
     "eslint": "^3.10.1",
     "eslint-config-airbnb-base": "^10.0.1",
