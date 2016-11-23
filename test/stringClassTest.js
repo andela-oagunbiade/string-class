@@ -1,9 +1,8 @@
 const expect = require('chai').expect;
 require('../src/stringClass');
 
-// Take a closer look at the "it" statements
 describe('StringManipulation Class', () => {
-  describe('Method hasVowels', () => {
+  describe('hasVowels', () => {
     it('should return "true" if word has vowels', () => {
       expect('andela'.hasVowels()).to.be.true;
     });
@@ -15,26 +14,26 @@ describe('StringManipulation Class', () => {
     });
   });
 
-  describe('Method toUpper', () => {
+  describe('toUpper', () => {
     it('should return the string in uppercase', () => {
       expect('amity'.toUpper()).to.equal('AMITY');
       expect('AnDelA'.toUpper()).to.equal('ANDELA');
     });
   });
 
-  describe('Method toLower', () => {
+  describe('toLower', () => {
     it('should return the string in lower case', () => {
       expect('AnDeLA'.toLower()).to.equal('andela');
     });
   });
 
-  describe('Method ucFirst', () => {
+  describe('ucFirst', () => {
     it('should return the string with the first letter in upper case', () => {
       expect('omoleye'.ucFirst()).to.equal('Omoleye');
     });
   });
 
-  describe('Method isQuestion', () => {
+  describe('isQuestion', () => {
     it('should return "true" if the entire string is a question', () => {
       expect('How are you?'.isQuestion()).to.be.true;
     });
@@ -43,19 +42,19 @@ describe('StringManipulation Class', () => {
     });
   });
 
-  describe('Method words', () => {
+  describe('words', () => {
     it('should return a list of words', () => {
       expect('Andela is fun'.words()).to.deep.equal(['Andela', 'is', 'fun']);
     });
   });
 
-  describe('Method wordCount', () => {
+  describe('wordCount', () => {
     it('should return the correct number of words', () => {
       expect('Andela is fun'.wordCount()).to.equal(3);
     });
   });
 
-  describe('Method reverseWord', () => {
+  describe('reverseWord', () => {
     it('should return the reverse of a word', () => {
       expect('maps'.reverseWord()).to.equal('spam');
     });
@@ -64,7 +63,7 @@ describe('StringManipulation Class', () => {
     });
   });
 
-  describe('Method toCurrency', () => {
+  describe('toCurrency', () => {
     it('should return a currency representation of a number', () => {
       expect('5000'.toCurrency()).to.equal('5,000.00');
       expect('10000.00'.toCurrency()).to.equal('10,000.00');
@@ -72,13 +71,13 @@ describe('StringManipulation Class', () => {
     });
   });
 
-  describe('Method fromCurrency', () => {
+  describe('fromCurrency', () => {
     it('should return a number representation of the curency', () => {
       expect('123,456,789.00'.fromCurrency()).to.equal('123456789.00');
     });
   });
 
-  describe('method inverseCase', () => {
+  describe('inverseCase', () => {
     it('should return each letter of a string in its inverse case', () => {
       expect('Mr. Ben'.inverseCase()).to.equal('mR. bEN');
     });
@@ -91,27 +90,29 @@ describe('StringManipulation Class', () => {
     });
   });
 
-  describe('Method getMiddle', () => {
+  describe('getMiddle', () => {
     it('should return characters in the middle of a string', () => {
       expect('world'.getMiddle()).to.equal('r');
       expect('worlds'.getMiddle()).to.equal('rl');
     });
   });
 
-  describe('Method numberWords', () => {
+  describe('numberWords', () => {
     it('should return words for numbers', () => {
       expect('805'.numberWords()).to.equal('eight zero five');
     });
   });
 
-  describe('Method isDigit', () => {
+  describe('isDigit', () => {
     it('should return "true" if string is a digit', () => {
       expect('7'.isDigit()).to.be.true;
+    });
+    it('should return "false" if string is a digit', () => {
       expect('77'.isDigit()).to.be.false;
     });
   });
 
-  describe('Method doubleCheck', () => {
+  describe('doubleCheck', () => {
     it('should return "true" if string contains double characters', () => {
       expect('zz'.doubleCheck()).to.be.true;
       expect('&&'.doubleCheck()).to.be.true;
