@@ -105,8 +105,8 @@ const StringManipulation = {
    * @return {String} Alternated case string
    */
   alternatingCase() {
-    return this.replace(/\w/g, (character, i) => {
-      return (i + 1) % 2 === 0 ? character.toUpper() : character.toLower();
+    return this.replace(/\w/g, (letter, index) => {
+      return (index + 1) % 2 === 0 ? letter.toUpper() : letter.toLower();
     });
   },
 
