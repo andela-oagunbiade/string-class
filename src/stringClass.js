@@ -87,7 +87,9 @@ const StringManipulation = {
    * @return {String} Represented as a number
    */
   fromCurrency() {
-    return this.replace(/,/g, '');
+    const wordParts = this.replace(/,/g, '').split(/\./);
+    return (wordParts[1] === '00') ?
+    wordParts[0] : `${wordParts[0]}.${wordParts[1]}`;
   },
 
   /**
