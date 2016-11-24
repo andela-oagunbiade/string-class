@@ -40,6 +40,12 @@ describe('StringManipulation Class', () => {
     it('should return "false" if the entire string is not a question', () => {
       expect('How? are you'.isQuestion()).to.be.false;
     });
+    it('should return "false" if the string does not contain at least one \
+    alphanumeric character', () => {
+      expect('?'.isQuestion()).to.be.false;
+      expect('???'.isQuestion()).to.be.false;
+      expect(' ?'.isQuestion()).to.be.false;
+    });
   });
 
   describe('words', () => {

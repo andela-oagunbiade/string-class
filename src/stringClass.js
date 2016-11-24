@@ -40,7 +40,7 @@ const StringManipulation = {
    * @return {Boolean} True or false depending on the match
    */
   isQuestion() {
-    return /^[\w\s]+\?$/.test(this);
+    return /^[A-Za-z0-9\s]+\?$/.test(this.trim());
   },
 
   /**
