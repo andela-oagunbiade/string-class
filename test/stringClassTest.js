@@ -138,8 +138,12 @@ describe('StringManipulation Class', () => {
     it('should return "true" if string is a digit', () => {
       expect('7'.isDigit()).to.be.true;
     });
-    it('should return "false" if string is a digit', () => {
+    it('should return "false" if string is not a single digit', () => {
       expect('77'.isDigit()).to.be.false;
+    });
+    it('should be able to handle negative and positive operators', () => {
+      expect('-7'.isDigit()).to.be.true;
+      expect('+7'.isDigit()).to.be.true;
     });
   });
 

@@ -148,7 +148,7 @@ const StringManipulation = {
    * @return {Boolean} True or False depending on the match
    */
   isDigit() {
-    return /^\d{1}$/.test(this);
+    return /^[-+]?\d{1}$/.test(this);
   },
 
   /**
