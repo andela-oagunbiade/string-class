@@ -48,7 +48,7 @@ const StringManipulation = {
    @return {Array} A list of the words
    */
   words() {
-    return this.replace(/[^\w\s]/g, '').split(/[\s]/);
+    return this.replace(/[^\w\s]/g, '').split(/\s+/);
   },
 
   /**

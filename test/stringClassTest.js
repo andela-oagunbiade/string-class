@@ -38,6 +38,9 @@ describe('StringManipulation Class', () => {
     it('should return the string with the first letter in upper case', () => {
       expect('omoleye'.ucFirst()).to.equal('Omoleye');
     });
+    it('should return an unchanged string if first letter is uppercase', () => {
+      expect('First'.ucFirst()).to.equal('First');
+    })
   });
 
   describe('isQuestion', () => {
@@ -59,11 +62,16 @@ describe('StringManipulation Class', () => {
     it('should return a list of words', () => {
       expect('Andela is fun'.words()).to.deep.equal(['Andela', 'is', 'fun']);
     });
+    it('should return a list of words without special characters', () => {
+      expect("%$$33 ^^^ *** Andela i*s awesome?".words())
+        .to.deep.equal(['33', 'Andela', 'is', 'awesome']);
+    });
   });
 
   describe('wordCount', () => {
     it('should return the correct number of words', () => {
       expect('Andela is fun'.wordCount()).to.equal(3);
+      expect("%$$33 ^^^ *** Andela i*s awesome?".wordCount()).to.equal(4);
     });
   });
 
