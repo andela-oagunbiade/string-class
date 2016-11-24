@@ -19,12 +19,19 @@ describe('StringManipulation Class', () => {
       expect('amity'.toUpper()).to.equal('AMITY');
       expect('AnDelA'.toUpper()).to.equal('ANDELA');
     });
+    it('should return an unchanged string if its already in uppercase', () => {
+      expect('ANDELA'.toUpper()).to.equal('ANDELA')
+    })
   });
 
   describe('toLower', () => {
     it('should return the string in lower case', () => {
+      expect('ANDELA'.toLower()).to.equal('andela');
       expect('AnDeLA'.toLower()).to.equal('andela');
     });
+    it('should return an unchanged string if its already in lowercase', () => {
+      expect('andela'.toLower()).to.equal('andela')
+    })
   });
 
   describe('ucFirst', () => {
