@@ -86,15 +86,23 @@ describe('StringManipulation Class', () => {
 
   describe('toCurrency', () => {
     it('should return a currency representation of a number', () => {
-      expect('5000'.toCurrency()).to.equal('5,000.00');
       expect('10000.00'.toCurrency()).to.equal('10,000.00');
-      expect('123456.789'.toCurrency()).to.equal('123,456.78');
+    });
+    it('should return a currency representation with decimals', () => {
+      expect('5000'.toCurrency()).to.equal('5,000.00');
+    });
+    it('should return a currency representation with two decimals', () => {
+      expect('123456.78945'.toCurrency()).to.equal('123,456.78');
     });
   });
 
   describe('fromCurrency', () => {
-    it('should return a number representation of the curency', () => {
-      expect('123,456,789.00'.fromCurrency()).to.equal('123456789.00');
+    it('should return a number representation of the currency', () => {
+      expect('123,456,789.98'.fromCurrency()).to.equal('123456789.98');
+    });
+    it('should return a number representation of the currency without \
+    insignificant zeroes', () => {
+      expect('123,456,789.00'.fromCurrency()).to.equal('123456789');
     });
   });
 
@@ -112,8 +120,10 @@ describe('StringManipulation Class', () => {
   });
 
   describe('getMiddle', () => {
-    it('should return characters in the middle of a string', () => {
+    it('should return the character in the middle of a string', () => {
       expect('world'.getMiddle()).to.equal('r');
+    });
+    it('should return two characters for a string with an even length', () => {
       expect('worlds'.getMiddle()).to.equal('rl');
     });
   });
