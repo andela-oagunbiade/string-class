@@ -40,7 +40,7 @@ const StringManipulation = {
    * @return {Boolean} True or false depending on the match
    */
   isQuestion() {
-    return /\?$/.test(this);
+    return /^[\w\s]+\?$/.test(this);
   },
 
   /**
