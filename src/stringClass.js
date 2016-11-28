@@ -60,7 +60,7 @@ const StringManipulation = {
   },
 
   /**
-   * Perfoms a reverse on a string
+   * Performs a reverse on a string
    * @return {String} The reverse of a string
    */
   reverseWord() {
@@ -73,13 +73,15 @@ const StringManipulation = {
    * @return {String} Represented as a currency
    */
   toCurrency() {
-    const currencyParts = this.split(/\./);
+    // Round up the Number before currency representation procedure begins
+    let currencyParts = Math.round(((Number(this)) + 0.00001) * 100) / 100;
+    currencyParts = String(currencyParts).split(/\./);
     currencyParts[1] = currencyParts[1] || '00';
     currencyParts[0] = currencyParts[0].reverseWord()
       .replace(/.{3}/g, number => `${number},`)
       .replace(/,$/, '')
       .reverseWord();
-    return `${currencyParts[0]}.${currencyParts[1].substr(0, 2)}`;
+    return `${currencyParts[0]}.${currencyParts[1]}`;
   },
 
   /**

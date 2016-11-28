@@ -92,7 +92,7 @@ describe('StringManipulation Class', () => {
       expect('5000'.toCurrency()).to.equal('5,000.00');
     });
     it('should return a currency representation with two decimals', () => {
-      expect('123456.78945'.toCurrency()).to.equal('123,456.78');
+      expect('123456.78945'.toCurrency()).to.equal('123,456.79');
     });
   });
 
