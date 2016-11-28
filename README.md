@@ -51,7 +51,7 @@ These methods were added:
 - doubleCheck: Checks if the string contains double characters
 
 ## How to use
-1.  Clone the repository into your local machine with `git clone https://github.com/andela-foladeji/string-class.git`
+1.  Clone the repository into your local machine with `git clone https://github.com/andela-oagunbiade/string-class.git`
 2.  Move into the repository directory with `cd string-class`
 3.  Run `npm install` to install all the dependencies. The application is built on [Nodejs](nodejs.org) so verify you have node installed on your local machine first.
 4.  To run tests, you can run the command below `npm test`
